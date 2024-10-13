@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>handyman worker booking system</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Handyman Worker Booking System</h1>
+    </header>
+    <main>
+        <nav id="worker-profiles">
+            <h2>Worker Profiles</h2>
+            <div class="worker-profile">
+                <img src="worker1.jpg" alt="Worker Image">
+                <h3>Julious Armah</h3>
+                <p>Skills: Plumbing, Electrical Work, Wallpaper Installation</p>
+                <button>View Profile</button>
+            </div>
+            <div class="worker-profile">
+                <img src="worker2.jpg" alt="Worker Image">
+                <h3>Akwasi Kofi</h3>
+                <p>Skills: Carpentry, Painting, Funiture repair</p>
+                <button>View Profile</button>
+            </div>
+            <div class="worker-profile"></div>
+                <img src="worker3.jpg" alt="Worker Image">
+                <h3>Julious Armah</h3>
+                <p>Skills: Plumbing, Electrical Work, Wallpaper Installation</p>
+                <button>View Profile</button>
+            </div>
+        </nav>
+
+        <section id="booking-scheduling">
+            <h2>Book a Worker</h2>
+            <form action="/book" method="POST">
+                <label for="worker">Choose a worker:</label>
+                <select id="worker" name="worker">
+                    <option value="Julious_Armah">Julious Armah</option>
+                    <option value="Akwasi_kofi">Akwasi Kofi</option>
+                </select>
+        
+                <label for="date">Choose a date:</label>
+                <input type="date" id="date" name="date">
+        
+                <label for="time">Choose a time:</label>
+                <input type="time" id="time" name="time">
+        
+                <input type="submit" value="Book Now">
+            </form>
+        </section>
+
+        <section id="payment-processing">
+            <h2>Payment Processing</h2>
+            <form action="/pay" method="POST">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Enter card number" required>
+        
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+        
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+        
+                <input type="submit" value="Pay Now">
+
+               
+            </form>
+        </section>
+        
+        <section id="rating-review">
+            <h2>Rate and Review</h2>
+            <form action="/review" method="POST">
+                <label for="worker">Select Worker:</label>
+                <select id="worker" name="worker">
+                    <option value="Julious_Armah">Julious Armah</option>
+                    <option value="Akwasi_kofi">Akwasi Kofi</option>
+                </select>
+        
+                <label for="rating">Rating:</label>
+                <input type="number" id="rating" name="rating" min="1" max="10" required>
+        
+                <label for="review">Write a Review:</label>
+                <textarea id="review" name="review" placeholder="Share your experience..." required></textarea>
+        
+                <input type="submit" value="Submit Review">
+            </form>
+        </section>
+                
+        <section id="service-categories">
+            <h2>Service Categories</h2>
+            <ul>
+                <li>Plumbing</li>
+                <li>Electrical Work</li>
+                <li>Carpentry</li>
+                <li>Painting</li>
+                <li>Door adjustment</li>
+                <li>Funiture repair</li>
+            </ul>
+        </section>
+
+        <section id="worker-availability">
+            <h2>Worker Availability</h2>
+            <div class="availability-status">
+                <p>Julious Armah: <span class="available">Available</span></p>
+                <p>Akwasi Kofi : <span class="not-available">Not Available</span></p>
+            </div>
+        </section>
+        
+        <section id="customer-management">
+            <h2>Customer Management</h2>
+            <button>Update Profile</button>
+            <button>View Messages</button>
+        </section>
+
+        <section id="booking-history">
+            <h2>Booking History</h2>
+            <ul>
+                <li>Julious Armah - Plumbing - 12/10/2024</li>
+                <li>Akwasi Kofi - Painting - 05/10/2024</li>
+            </ul>
+        </section>
+
+        <section id="worker-portfolio">
+            <h2>Worker Portfolio</h2>
+            <button>Add Work Example</button>
+            <button>Remove Work Example</button>
+        </section>
+
+        <section id="customer-feedback">
+            <h2>Customer Feedback</h2>
+            <form action="/feedback" method="POST">
+                <label for="feedback">Submit Feedback:</label>
+                <textarea id="feedback" name="feedback" placeholder="Share your thoughts..." required></textarea>
+        
+                <input type="submit" value="Submit Feedback">
+            </form>
+        </section>
+
+        <section id="service-search">
+            <h2>Search and Filter Services</h2>
+            <form action="/search" method="GET">
+                <label for="search">Search for a Service:</label>
+                <input type="text" id="search" name="search" placeholder="Enter service (e.g., Plumbing)" required>
+        
+                <label for="category">Filter by Category:</label>
+                <select id="category" name="category">
+                    <option value="all">All Categories</option>
+                    <option value="plumbing">Plumbing</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="carpentry">Carpentry</option>
+                    <option value="Wallpaper Installation">Wallpaper Installation</option>
+                    <option value="Door adjustment">Door adjustment</option>
+                    <option value="Lighting replacement">Lighting replacement</option>
+                </select>
+        
+                <input type="submit" value="Search">
+            </form>
+        </section>
+
+        <section id="map-view">
+            <h2>Find Workers Near You</h2>
+            <div id="map">
+                <!-- Embed Google Maps API or similar service -->
+                <p>Map loading...</p>
+            </div>
+        </section>
+
+        <section id="favorite-workers">
+            <h2>Your Favorite Workers</h2>
+            <ul>
+                <li>Julious Armah - <button>Remove from Favorites</button></li>
+                <li>Akwasi Kofi- <button>Remove from Favorites</button></li>
+            </ul>
+        </section>
+
+        <section id="real-time-updates">
+            <h2>Real-Time Availability</h2>
+            <div class="availability-status">
+                <p>Julious Armah: <span class="available">Available</span></p>
+                <p>Akwasi Kofi: <span class="not-available">Not Available</span></p>
+            </div>
+        </section>
+
+        <section id="notifications">
+            <h2>Notifications</h2>
+            <ul>
+                <li>Your booking with Julious Armah is confirmed for 12/10/2024 at 10:00 AM</li>
+                <li>Akwasi Kofi is now available for booking.</li>
+            </ul>
+        </section>
+        
+        <section id="skill-verification">
+            <h2>Worker Skill Verification</h2>
+            <div class="worker-certifications">
+                <p>Julious Armah: <strong>Certified Plumber</strong></p>
+                <p>Akwasi Kofi: <strong>Licensed Carpenter</strong></p>
+            </div>
+        </section>
+        
+        <section id="loyalty-program">
+            <h2>Customer Loyalty Program</h2>
+            <p>Earn points for every booking. Redeem points for discounts on future services!</p>
+            <button>View Points</button>
+        </section>
+
+        <section id="performance-tracking">
+            <h2>Worker Performance</h2>
+            <div class="worker-performance">
+                <p>Julious Armah: 4.8/5 Stars (50 Jobs Completed)</p>
+                <p>Akwasi Kofi: 4.7/5 Stars (45 Jobs Completed)</p>
+            </div>
+        </section>
+
+        <section id="secure-payment">
+            <h2>Secure Payment Processing</h2>
+            <p>We use SSL encryption to ensure your payment details are safe and secure.</p>
+            <button>Learn More</button>
+        </section>
+
+        <section id="invoicing-billing">
+            <h2>Online Invoicing and Billing</h2>
+            <button>View Invoice</button>
+            <button>Download Receipt</button>
+        </section>
+
+        <section id="multi-service-booking">
+            <h2>Book Multiple Services</h2>
+            <form action="/book-multi" method="POST">
+                <label for="services">Select Services:</label>
+                <select id="services" name="services[]" multiple>
+                    <option value="plumbing">Plumbing</option>
+                    <option value="carpentry">Carpentry</option>
+                    <option value="electrical">Electrical Work</option>
+                    <option value="painting">Painting</option>
+                </select>
+        
+                <input type="submit" value="Book Services">
+            </form>
+        </section>
+
+        <section id="worker-certification">
+            <h2>Worker Certifications</h2>
+            <div class="worker-cert">
+                <p>Julious Armah: Certified Plumber</p>
+                <p>Akwasi Kofi: Licensed Electrician</p>
+            </div>
+        </section>
+
+        <section id="customer-support-chat">
+            <h2>Customer Support</h2>
+            <div class="chat-box">
+                <p>How can we assist you today?</p>
+                <textarea placeholder="Type your message..."></textarea>
+                <button>Send</button>
+            </div>
+        </section>
+
+        <section id="cancellation-policy">
+            <h2>Service Cancellation Policy</h2>
+            <p>Customers can cancel services up to 24 hours before the appointment without any fees. After that, a cancellation fee may apply.</p>
+        </section>
+
+        <section id="social-media">
+            <h2>Connect with Us</h2>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="https://twitter.com" target="_blank"><img src="Image/twitter.jpg" alt="Twitter"></a>
+                <a href="https://instagram.com" target="_blank"><img src="Image/instagram.jpg" alt="Instagram"></a>
+            </div>
+        </section>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
